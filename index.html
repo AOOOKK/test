@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern ClickGUI Interface</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="gui-container">
+        <!-- Header -->
+        <header class="gui-header">
+            <div class="header-content">
+                <h1 class="gui-title">
+                    <i class="fas fa-cog"></i>
+                    ClickGUI
+                </h1>
+                <div class="header-controls">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Search modules..." class="search-input">
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    <button class="header-btn" id="settingsBtn" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="header-btn" id="minimizeBtn" title="Minimize">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="gui-main">
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be dynamically generated -->
+            </div>
+        </main>
+
+        <!-- Settings Modal -->
+        <div class="modal-overlay" id="settingsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button class="modal-close" id="closeSettings">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label>Theme</label>
+                        <select id="themeSelect" class="setting-select">
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                            <option value="auto">Auto</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Animation Speed</label>
+                        <input type="range" id="animationSpeed" min="0.5" max="2" step="0.1" value="1" class="setting-slider">
+                        <span class="slider-value">1.0x</span>
+                    </div>
+                    <div class="setting-group">
+                        <label>Grid Columns</label>
+                        <input type="range" id="gridColumns" min="2" max="6" step="1" value="3" class="setting-slider">
+                        <span class="slider-value">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tooltip -->
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <script src="js/modules.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
